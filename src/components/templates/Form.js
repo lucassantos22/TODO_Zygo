@@ -70,10 +70,9 @@ class FormComponent extends Component {
     render(){
         return(
             <>
-            <h3>Cadastrar</h3>
+            <h3>Adicionar tarefa</h3>
             <Form>
             <Form.Group controlId="formBasicEmail">
-                <Form.Label>Tarefa</Form.Label>
                 <Form.Control onChange={e => this.setState({title:e.target.value})} type="text" required/>
                 <Form.Text className="text-muted">
                 Campo obrigatório
