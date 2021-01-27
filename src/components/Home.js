@@ -97,9 +97,6 @@ class Home extends Component {
     }
 
     async editTask(url, title){
-        if (title.length === 0) {
-            alert('A tarefa deve ter um título');
-        }
         this.props.updateLoading(true);
         try {
             await axios.patch(url,

@@ -5,7 +5,7 @@ import { Check, TrashFill, Exclamation } from 'react-bootstrap-icons';
 
 export default props => {
 
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState({value: '', url: ''});
 
     return (
         <>
@@ -33,10 +33,10 @@ export default props => {
                                     <InputGroup style={{width: '100%', marginTop: '12px'}}>
                                         <FormControl
                                             placeholder={task.title}
-                                            onChange={e => setTitle(e.target.value)}
+                                            onChange={e => setTitle({value: e.target.value, url: task.url})}
                                         />
                                         <InputGroup.Append>
-                                        <Button variant="primary" onClick={()=>props.editTask(task.url, title)}>Editar</Button>
+                                        <Button variant="primary" disabled={title.url === task.url && title.value.length > 0 ? false : true} onClick={()=>props.editTask(task.url, title.value)}>Editar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
                                         : <td style={{textDecoration: 'line-through'}}><span style={{marginTop: '12px'}}>{task.title}</span></td>}
