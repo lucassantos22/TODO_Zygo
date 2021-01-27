@@ -28,7 +28,7 @@ export default props => {
                         <tbody>
                             {props.tasks.map(task=>(
                                 <tr key={task.url}>
-                                    <td>{task.completed ? <Button onClick={()=>props.completeTask(task.url, false)} variant='success'><Check size='20'/></Button> : <Button onClick={()=>props.completeTask(task.url, true)} variant='warning'><Exclamation size='20'/></Button>}</td>
+                                    <td>{task.completed ? <Button onClick={()=>props.completeTask(task.url, false)} variant='success' title='Concluído'><Check size='20'/></Button> : <Button onClick={()=>props.completeTask(task.url, true)} variant='warning' title='A fazer'><Exclamation size='20'/></Button>}</td>
                                     {task.completed === false? 
                                     <InputGroup style={{width: '100%', marginTop: '12px'}}>
                                         <FormControl
