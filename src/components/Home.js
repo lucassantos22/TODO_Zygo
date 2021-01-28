@@ -134,7 +134,7 @@ class Home extends Component {
         return(
             <>
             {
-                this.props.loading ? <Spinner animation="border" variant="info" style={{position: 'absolute', zIndex: '1', left: '50%', top: '40%'}}/>
+                this.props.loading ? <Spinner animation="border" className='spinner' variant="info"/>
                 : null    
             }
             <Card>

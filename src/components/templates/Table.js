@@ -11,7 +11,7 @@ export default props => {
         <>
             <h3>{props.title}</h3>
             {props.completed ?
-                <Button variant="primary" style={{float: 'right', marginBottom: '-100%'}} size="sm" onClick={()=>props.deleteCompletedTasks()}>
+                <Button variant="primary" className='buttonDeleteAll' size="sm" onClick={()=>props.deleteCompletedTasks()}>
                     Limpar tarefas concluídas
                 </Button>
             : null
@@ -30,7 +30,7 @@ export default props => {
                                 <tr key={task.url}>
                                     <td>{task.completed ? <Button onClick={()=>props.completeTask(task.url, false)} variant='success' title='Concluído'><Check size='20'/></Button> : <Button onClick={()=>props.completeTask(task.url, true)} variant='warning' title='A fazer'><Exclamation size='20'/></Button>}</td>
                                     {task.completed === false? 
-                                    <InputGroup style={{width: '100%', marginTop: '12px'}}>
+                                    <InputGroup className='inputGroup'>
                                         <FormControl
                                             placeholder={task.title}
                                             onChange={e => setTitle({value: e.target.value, url: task.url})}
@@ -39,7 +39,7 @@ export default props => {
                                         <Button variant="primary" disabled={title.url === task.url && title.value.length > 0 ? false : true} onClick={()=>props.editTask(task.url, title.value)}>Editar</Button>
                                         </InputGroup.Append>
                                     </InputGroup>
-                                        : <td style={{textDecoration: 'line-through'}}><span style={{marginTop: '12px'}}>{task.title}</span></td>}
+                                        : <td className='lineThrough'><span>{task.title}</span></td>}
                                     {!task.completed ? <td><Button variant="danger" onClick={()=>props.deleteTask(task.url)}><TrashFill/></Button></td> : <td><Button variant="secondary" disabled><TrashFill/></Button></td>}
                                 </tr>
                             ))}

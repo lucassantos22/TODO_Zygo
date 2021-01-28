@@ -5,6 +5,36 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+}
+
+.spinner {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 40%;
+}
+
+.buttonDeleteAll {
+  float: right;
+  margin-bottom: -100%;
+}
+
+.inputGroup {
+  width: 100%;
+  margin-top: 12px
+}
+
+.lineThrough{
+  text-decoration: line-through;
+}
+
+.white {
+  color: white;
+}
+
+.marginBotton{
+  margin-bottom: 3px;
 }
 
 code {
